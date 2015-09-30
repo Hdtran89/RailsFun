@@ -1,6 +1,6 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     @pins = Pin.all
     respond_with(@pins)
@@ -22,6 +22,7 @@ class PinsController < ApplicationController
       redirect_to @pin, notice: 'Pin was successfully created.'
     else
       render: new
+    end
   end
 
   def update
@@ -29,6 +30,7 @@ class PinsController < ApplicationController
       redirect_to @pin, notide: 'Pin was successfully updated.'
     else
       render: edit
+    end
   end
 
   def destroy
